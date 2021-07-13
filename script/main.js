@@ -98,7 +98,7 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("./../images/space3.jpg");
+const spaceTexture = new THREE.TextureLoader().load("./../images/space.jpg");
 scene.background = spaceTexture;
 
 function moveCamera() {
@@ -156,6 +156,9 @@ const showCases = async function () {
     );
     const data = await res.json();
     // console.log(data);
+    function numberWithCommas(x) {
+      return new Intl.NumberFormat("en-IN").format(x);
+    }
 
     for (const key in data) {
       confirmedCases += data[key]["total"]["confirmed"];
@@ -168,22 +171,22 @@ const showCases = async function () {
     const markup1 = `
   
   <div class="totalCases">
-    <h4>Total Cases</h4>
+    <h4>  Total Cases  </h4>
    <h4>
-    ${confirmedCases}
+    ${numberWithCommas(confirmedCases)}
    </h4>
    
   </div>
   <div class="recovered">
-    <h4>Recovered</h4>
+    <h4>  Recovered  </h4>
     <h4>
-    ${recovered}
+    ${numberWithCommas(recovered)}
    </h4>
   </div>
   <div class="deaths">
-    <h4>Deaths</h4>
+    <h4>  Deaths  </h4>
     <h4>
-    ${deceased}
+    ${numberWithCommas(deceased)}
    </h4>
   </div>
 
@@ -194,11 +197,11 @@ const showCases = async function () {
     const markup2 = `
   <div class="dose1">
     <h4>Dose 1</h4>
-    <h4>${dose1}</h4>
+    <h4>${numberWithCommas(dose1)}</h4>
     </div>
     <div class="dose2">
     <h4>Dose 2</h4>
-    <h4>${dose2}</h4>
+    <h4>${numberWithCommas(dose2)}</h4>
   </div>
     `;
     vaccine.insertAdjacentHTML("afterbegin", markup2);
