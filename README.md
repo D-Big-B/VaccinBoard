@@ -1,9 +1,10 @@
-# WebD-Selection
+# VaccinBoard
+
 ---
 [Live Link](https://affectionate-noether-d0e309.netlify.app/)
 ---
 
-#### This WebPage gives information about the COVID-19
+#### This WebPage gives information about the scenario of Covid-19 in India as a whole
 
 ##### In this webpage you can find the following :
 
